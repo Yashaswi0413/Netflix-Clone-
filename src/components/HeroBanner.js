@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { FaPlay, FaInfoCircle } from 'react-icons/fa'
-import { API_KEY, BASE_URL } from '../config'
+import { BASE_URL } from '../config'
 
 export default function HeroBanner() {
   const [movie, setMovie] = useState(null)
   const [loading, setLoading] = useState(true)
-
+  const API_KEY = process.env.API_KEY
   // fetching random movie
   useEffect(() => {
     async function fetchData() {
