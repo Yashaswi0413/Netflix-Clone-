@@ -6,7 +6,6 @@ export default function HeroBanner() {
   const [movie, setMovie] = useState(null)
   const [loading, setLoading] = useState(true)
   const API_KEY = process.env.REACT_APP_API_KEY
-  console.log('api key: ', API_KEY)
   // fetching random movie
   useEffect(() => {
     async function fetchData() {
