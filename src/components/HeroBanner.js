@@ -5,7 +5,8 @@ import { BASE_URL } from '../config'
 export default function HeroBanner() {
   const [movie, setMovie] = useState(null)
   const [loading, setLoading] = useState(true)
-  const API_KEY = process.env.API_KEY
+  const API_KEY = process.env.REACT_APP_API_KEY
+  console.log('api key: ', API_KEY)
   // fetching random movie
   useEffect(() => {
     async function fetchData() {
@@ -27,6 +28,7 @@ export default function HeroBanner() {
     }
 
     fetchData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (loading) {
