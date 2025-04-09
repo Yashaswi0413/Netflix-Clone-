@@ -5,13 +5,12 @@ import { BASE_URL } from '../config'
 export default function HeroBanner() {
   const [movie, setMovie] = useState(null)
   const [loading, setLoading] = useState(true)
-  const API_KEY = process.env.REACT_APP_API_KEY
   // fetching random movie
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch(
-          `${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=en-US`
+          `${BASE_URL}/trending/all/week?api_key=${process.env.API_KEY}&language=en-US`
         )
         const data = await response.json()
         // get random movie from the list
